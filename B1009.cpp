@@ -1,5 +1,6 @@
 #include<cstdio>
 #include<cstring>
+
 int main(){
     int num = 0;    //记录单词数量
     char word[80][80];  //存储单词

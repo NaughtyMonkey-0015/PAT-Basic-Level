@@ -1,28 +1,34 @@
-#include<cstdio>
-#include<cmath>
-#include<cstdlib>
-#include<cstring>
-//const int N = 100010;
-int	sum[100000]={0}; //要求参赛人数不得超过10000，故定义的数组需要容纳理论最大学生数
-int main(){
-	int n,sch,score;
-	
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+
+const int max = 100010;
+
+int main()
+{
+   int n,sch,score;         //参赛人数，学校编号，学生分数;
+   int sumscore[max] = {0}; //学校总分；
     scanf("%d",&n);
+
+    for(int i = 0;i < n;i++)    //录入个人信息
+    {           
+        scanf("%d %d",&sch,&score);
+        sumscore[sch] += score;
+    }
     
-    for(int i = 0;i < n;i++){
-    	scanf("%d %d",&sch,&score);
-    	sum[sch] += score;
-	}
-    int k = 1,max = -1;
-    for(int i = 1;i <= n;i++){
-    	if(sum[i] > max){
-    		k = i;
-    		max = sum[i];
-		}
-	}
+    int k=0, sum = -1;
+    for (int i = 1; i <= n; i++)    //比较各学校总分        
+    {
+        if (sumscore[i] > sum) 
+        {
+            sum = sumscore[i];
+            k = i;
+        } 
+    }
     
-    printf("%d %d\n",k,max);
-    
-	return 0;
+    printf("%d %d\n",k,sum);
+
+   return 0;
 }
 
