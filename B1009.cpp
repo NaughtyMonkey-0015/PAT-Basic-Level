@@ -2,8 +2,8 @@
 #include<cstring>
 
 int main(){
-    int num = 0;    //璁板綍鍗曡瘝鏁伴噺
-    char word[80][80];  //瀛樺偍鍗曡瘝
+    int num = 0;    //记录单次数量
+    char word[80][80];  //存储单词
     while (scanf("%s",word[num]) != EOF){
         num ++;
     }
