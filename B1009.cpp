@@ -15,8 +15,8 @@ int main(){
     return 0;
 }*/
 
-#include <iostream>
-#include <stack>
+#include<iostream>
+#include<stack>
 #include<string>
 
 using namespace std;
